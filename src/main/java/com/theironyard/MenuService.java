@@ -1,9 +1,5 @@
 package com.theironyard;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-
 /**
  * The MenuService class is used to prompt users for data and to collect that
  * input. It is also responsible for validating that input. For example, if we
@@ -48,8 +44,6 @@ public class MenuService {
 
 
 
-
-
     /**
      * Create a method named promptForWeight(). It should accept no arguments
      * and return a double value. The double value is, of course, the value the
@@ -84,6 +78,7 @@ public class MenuService {
         // todo: prompt the user with "Enter a weight: "
 
 
+
         /*
             Now we need to see if the user inputs a numeric value. We can check
             this by calling the Scanner class' hasNextDouble() method. This
@@ -102,6 +97,7 @@ public class MenuService {
          */
         // todo: write if statement that checks if the user input a double
 
+
             /*
                 If hasNextDouble() has returned true then the user has entered a
                 valid double value. But, we haven't yet read it. We need to do
@@ -112,6 +108,7 @@ public class MenuService {
 
 
         // todo: write else statement
+
 
             /*
                 If hasNextDouble() has returned false then the user entered
@@ -126,7 +123,6 @@ public class MenuService {
                 value and print that as a part of an error message.
              */
             // todo: read the bad input and store it in a variable
-
 
             /*
                 We know we've received bad input from the user and we've read it
@@ -144,7 +140,6 @@ public class MenuService {
                 use println() or explicitly end the string with a '\n'.
              */
             // todo: print error message reading "XYZ is not a number" followed by a single linebreak
-
 
             /*
                 Now that we've told our users what's wrong with their input. We
@@ -229,13 +224,16 @@ public class MenuService {
             form shown above. EG: [gram, pound, stone]. So, you should be able
             to simply write a String expression similar to:
 
-            `"Select the unit to convert from " + units`
+            `"Select the unit to convert from " + units + ": "`
+
+            Don't forget the trailing colon!
 
             The prompt must be followed by a single newline character. This can
             be automatically added via println() or manually added using '\n'
             with a different print function.
          */
         // todo: prompt the user for the unit to convert from
+
 
 
         /*
@@ -250,6 +248,7 @@ public class MenuService {
             You should save this data into variable.
          */
         // todo: read the next line of input using the next() method and save it in a variable
+
 
 
         /*
@@ -295,7 +294,7 @@ public class MenuService {
             // todo: return the result of calling promptForFromUnit() again
 
 
-        // todo: write else statement
+            // todo: write else statement
 
             /*
                 If the user's input was valid we need to convert it to a valid
@@ -306,10 +305,11 @@ public class MenuService {
                 Don't forget that the users will have typed a lowercase string
                 for the unit. As such, you'll need to convert the string to be
                 all uppercase. The String method provides a toUpperCase() method
-                that does this.
+                that does this. Also, if the user typed "metric ton" you will
+                need to replace the space with an underscore. You can do this
+                using the String class' replaceAll() method.
              */
             // todo: return the Weight enum value corresponding to the unit the user typed in
-
 
 
 
@@ -335,6 +335,7 @@ public class MenuService {
     // todo: implement promptForToUnit() method
 
 
+
     /**
      * Create a method named printAnswer(). It should accept arguments for the
      * weight to convert, the unit being converted from, the unit being
@@ -353,11 +354,14 @@ public class MenuService {
      * Pay attention to plurals, but don't worry about singulars. In other
      * words, it's ok to always write pounds, even "1 pounds".
      *
+     * The output must be followed by a single newline character.
+     *
      * @param number The weight being converted
      * @param from The unit being converted from
      * @param converted The converted value
      * @param to The unit of the converted value
      */
     // todo: implement printAnswer() method
+
 
 }

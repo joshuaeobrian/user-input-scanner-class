@@ -28,11 +28,14 @@ public enum Weight {
      */
     // todo: create enums that call a constructor to set their weight in grams
 
+
+
     /**
      * Create a property that holds the enum value's weight in grams. This is
      * provided to and set by the Weight() constructor.
      */
     // todo: Create a private double property that holds the enum instance's weight in grams.
+
 
     /**
      * Create a constructor for the Weight enum. It should accept an argument
@@ -41,10 +44,13 @@ public enum Weight {
      */
     // todo: create constructor
 
+
     /**
      * Create a method named getGrams() that accepts no arguments and returns
      * the enum's weight in grams.
      * @return The enum's weight in grams
      */
     // todo: create getGrams() method
+
+
 }

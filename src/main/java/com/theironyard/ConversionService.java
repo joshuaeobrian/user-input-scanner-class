@@ -1,8 +1,5 @@
 package com.theironyard;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * The ConversionService is responsible for converting values between units. It
  * also can provide a list of units it can convert between (in String form).
@@ -22,8 +19,8 @@ public class ConversionService {
 
     /**
      * Create a method named listUnits(). This method accepts no arguments and
-     * returns a List of String objects. The List is a list of valid units that
-     * we can convert between. All of the values should be returned in
+     * returns an ArrayList of String objects. The List is a list of valid units
+     * that we can convert between. All of the values should be returned in
      * lowercase.
      *
      * All enums have a method, values(), that returns an array of that enum's
@@ -37,9 +34,10 @@ public class ConversionService {
      * characters should be replaced with spaces. If you're not sure how to do
      * this, research the String class' toLowerCase() and replaceAll() methods.
      *
-     * @return A List of lowercase Strings containing valid units. All underscores are replaced with spaces.
+     * @return A ArrayList of lowercase Strings containing valid units. All underscores are replaced with spaces.
      */
     // todo: create listUnits() method
+
 
 
     /**
@@ -68,9 +66,10 @@ public class ConversionService {
      * @param weight a decimal number that is being converted from one unit to another
      * @param from a Weight value. EG: Weight.METRIC_TON. This is the unit we're converting from.
      * @param to a Weight value. This is the unit we're converting to.
-     * @return
+     * @return the converted weight
      */
     // todo: create convert() method
+
 
 
 }

@@ -25,16 +25,9 @@ public class WeightTest extends TestifierTest {
     @Parameters
     public void testEnumValues(String weight, double value) {
         /* arrange */
-        Weight unit = null;
-        try {
-            unit = (Weight) Invoker.getEnumValue(Weight.class, weight);
-        } catch (CannotFindEnumException e) {
-            fail(e.getMessage());
-        }
-
         double grams = -1;
         try {
-            Weight enumValue = (Weight) Invoker.getEnumValue(Weight.class, "GRAM");
+            Weight enumValue = (Weight) Invoker.getEnumValue(Weight.class, weight);
             grams = (double) Invoker.invoke(enumValue, "getGrams");
         } catch (CannotInvokeMethodException | CannotFindMethodException | CannotAccessMethodException | CannotFindEnumException e) {
             fail(e.getMessage());

@@ -1,7 +1,5 @@
 package com.theironyard;
 
-import java.util.Scanner;
-
 /**
  * As we move into writing more complex software we begin to compose our build
  * applications using many classes. Each class is dedicated to some purpose. The
@@ -33,8 +31,8 @@ import java.util.Scanner;
  * application. You will want implement classes in this order:
  *
  * 1) Weight
- * 2) Conversion
- * 3) Menu
+ * 2) ConversionService
+ * 3) MenuService
  * 4) Main
  *
  * Open each of these classes and follow the directions therein.
@@ -62,6 +60,7 @@ public class Main {
 
 
         // todo: Configure the Scanner instance to use a newline (\n) character as its delimiter
+
 
 
         // todo: Create a new instance of the ConversionService
