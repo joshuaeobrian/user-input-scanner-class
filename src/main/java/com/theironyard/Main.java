@@ -12,22 +12,23 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         scanner.useDelimiter("\n");
 
-        UnitConversionService converter = new UnitConversionService();
+        ConversionService converter = new ConversionService();
         MenuService menu = new MenuService(scanner);
 
-        // prompt for conversion type
-        String type = menu.selectConversionType(converter.listConversionTypes());
+        // prompt for a weight to convert
+        double number = menu.promptForWeight();
 
-        // prompt for the number to convert
-        double number = menu.promptForNumber(type);
+        // prompt for the from unit
+        Weight from = menu.promptForFromUnit(converter.listUnits());
 
-        // prompt for the from and to units
-        if(type.equals("length")) {
-            menu.promptForFromUnit(converter.listLengthUnits());
-            menu.promptForToUnit(converter.listLengthUnits());
-        } else {
+        // prompt for the to unit
+        Weight to = menu.promptForToUnit(converter.listUnits());
 
-        }
+        // convert the weight
+        double converted = converter.convert(number, from, to);
+
+        // print the answer
+        menu.printAnswer(number, from, converted, to);
 
     }
 

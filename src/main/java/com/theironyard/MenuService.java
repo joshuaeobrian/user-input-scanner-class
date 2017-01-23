@@ -12,35 +12,21 @@ public class MenuService {
         this.scanner = scanner;
     }
 
-    public String selectConversionType(List<String> conversionTypes) {
-        System.out.printf("Select conversion type %s:\n", conversionTypes);
+    public double promptForWeight() {
+        System.out.println("Enter a weight: ");
 
-        String type = scanner.next();
-
-        if(!conversionTypes.contains(type)){
-            System.out.println("Please choose a valid conversion type.");
-
-            return selectConversionType(conversionTypes);
-        } else {
-            return type;
-        }
-    }
-
-    public double promptForNumber(String type) {
-        System.out.println("Enter a " + type);
-
-        if(scanner.hasNext() && scanner.hasNextDouble()){
+        if(scanner.hasNextDouble()){
            return scanner.nextDouble();
         } else {
             String badInput = scanner.nextLine();
 
             System.out.printf("%s is not a number\n", badInput);
 
-            return promptForNumber(type);
+            return promptForWeight();
         }
     }
 
-    public String promptForFromUnit(List<String> units) {
+    public Weight promptForFromUnit(List<String> units) {
         System.out.printf("Select the unit to convert from %s:\n", units);
 
         String type = scanner.next();
@@ -48,13 +34,13 @@ public class MenuService {
         if(!units.contains(type)){
             System.out.println("Please choose a valid unit to convert from.");
 
-            return selectConversionType(units);
+            return promptForFromUnit(units);
         } else {
-            return type;
+            return Weight.valueOf(type.toUpperCase());
         }
     }
 
-    public String promptForToUnit(List<String> units) {
+    public Weight promptForToUnit(List<String> units) {
         System.out.printf("Select the unit to convert to %s:\n", units);
 
         String type = scanner.next();
@@ -62,9 +48,14 @@ public class MenuService {
         if(!units.contains(type)){
             System.out.println("Please choose a valid unit to convert to.");
 
-            return selectConversionType(units);
+            return promptForToUnit(units);
         } else {
-            return type;
+            return Weight.valueOf(type.toUpperCase());
         }
+    }
+
+    public void printAnswer(double number, Weight from, double converted, Weight to) {
+        System.out.printf("%s %ss is %s %ss", number, from.toString().toLowerCase(), converted, to.toString().toLowerCase());
+
     }
 }

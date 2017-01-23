@@ -1,8 +1,6 @@
 package com.theironyard;
 
-/**
- * Created by doug on 1/19/17.
- */
+
 public enum Weight {
     TON(907184.74),
     POUND(453.59237),
