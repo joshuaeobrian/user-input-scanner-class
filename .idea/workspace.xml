@@ -2,24 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da726e29-a529-42ea-9d8b-c49b341949ae" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_5_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_5_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_2_3_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_2_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__pl_pragmatists_JUnitParams_1_0_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/theironyard/MenuServiceTest.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/theironyard/Length.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/theironyard/UnitConversionService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/java/com/theironyard/UnitConversionServiceTest.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_doughughes_testifier_rule_1_1_28.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_doughughes_testifier_rule_1_1_29.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/theironyard/ConversionService.java" afterPath="$PROJECT_DIR$/src/main/java/com/theironyard/ConversionService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/theironyard/Main.java" afterPath="$PROJECT_DIR$/src/main/java/com/theironyard/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/theironyard/MenuService.java" afterPath="$PROJECT_DIR$/src/main/java/com/theironyard/MenuService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/theironyard/Weight.java" afterPath="$PROJECT_DIR$/src/main/java/com/theironyard/Weight.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/theironyard/MainTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/theironyard/MainTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user-input-scanner-class.iml" afterPath="$PROJECT_DIR$/user-input-scanner-class.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/theironyard/ConversionServiceTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/theironyard/ConversionServiceTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/theironyard/MenuServiceTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/theironyard/MenuServiceTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/theironyard/WeightTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/theironyard/WeightTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -35,48 +24,7 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.47752395">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/theironyard/Main.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="352">
-                  <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="MenuServiceTest.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/test/java/com/theironyard/MenuServiceTest.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="660">
-                  <caret line="54" column="5" lean-forward="true" selection-start-line="33" selection-start-column="4" selection-end-line="54" selection-end-column="5" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="MainTest.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/test/java/com/theironyard/MainTest.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="616">
-                  <caret line="52" column="16" lean-forward="false" selection-start-line="52" selection-start-column="16" selection-end-line="52" selection-end-column="16" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -91,7 +39,20 @@
     <findStrings>
       <find>\&quot;</find>
       <find>println</find>
+      <find>values</find>
+      <find>MenuService menuService = null;         try {             menuService = (MenuService) Invoker.instantiate(MenuService.class, scanner);         } catch (CannotFindConstructorException | CannotInstantiateClassException | CannotAccessMethodException e) {             fail(e.getMessage());         }</find>
+      <find>MenuService menuService = new MenuService(scanner);</find>
+      <find>prompt for</find>
+      <find>promptfor</find>
+      <find>List</find>
+      <find>fail(e.getMessage())</find>
+      <find>} else</find>
+      <find>e.printStackTrace();</find>
     </findStrings>
+    <replaceStrings>
+      <replace>MenuService menuService = null;         try {             menuService = (MenuService) Invoker.instantiate(MenuService.class, scanner);         } catch (CannotFindConstructorException | CannotInstantiateClassException | CannotAccessMethodException e) {             fail(e.getMessage());         }`</replace>
+      <replace>fail(e.getMessage());</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -134,14 +95,14 @@
         <option value="$PROJECT_DIR$/src/main/java/com/theironyard/UserInputService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/theironyard/UnitConversionService.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/theironyard/UnitConversionServiceTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/theironyard/ConversionServiceTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/theironyard/MainTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/theironyard/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/theironyard/MenuService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/theironyard/ConversionService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/theironyard/Weight.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/theironyard/WeightTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/theironyard/MenuService.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/theironyard/MenuServiceTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/theironyard/Main.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/theironyard/MainTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/theironyard/ConversionServiceTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/theironyard/WeightTest.java" />
       </list>
     </option>
   </component>
@@ -334,7 +295,7 @@
       <recent name="com.theironyard" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in user-input-scanner-class">
+  <component name="RunManager" selected="JUnit.Run all tests (All in user-input-scanner-class)">
     <configuration default="false" name="MenuServiceTest.testPromptForToUnitBadThenGood" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -439,18 +400,18 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="All in user-input-scanner-class" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="Run all tests (All in user-input-scanner-class)" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="user-input-scanner-class" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
       <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$MODULE_DIR$" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
@@ -953,11 +914,11 @@
       <item index="1" class="java.lang.String" itemvalue="JUnit.MenuServiceTest" />
       <item index="2" class="java.lang.String" itemvalue="JUnit.MenuServiceTest.testPrintAnswer" />
       <item index="3" class="java.lang.String" itemvalue="JUnit.MainTest" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.All in user-input-scanner-class" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.Run all tests (All in user-input-scanner-class)" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.All in user-input-scanner-class" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.Run all tests (All in user-input-scanner-class)" />
         <item index="1" class="java.lang.String" itemvalue="JUnit.MainTest" />
         <item index="2" class="java.lang.String" itemvalue="JUnit.MenuServiceTest" />
         <item index="3" class="java.lang.String" itemvalue="JUnit.MenuServiceTest.testPrintAnswer" />
@@ -976,48 +937,48 @@
       <option name="presentableId" value="Default" />
       <updated>1484852861043</updated>
       <workItem from="1484852866423" duration="1774000" />
-      <workItem from="1485171494954" duration="10883000" />
+      <workItem from="1485171494954" duration="21867000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_user-input-scanner-class - 2017.01.23 at 10h 52m 16s.xml">
-      <configuration name="All in user-input-scanner-class" configurationId="JUnit" />
+    <history-entry file="Run_all_tests_(All_in_user-input-scanner-class) - 2017.01.23 at 14h 54m 48s.xml">
+      <configuration name="Run all tests (All in user-input-scanner-class)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MainTest - 2017.01.23 at 10h 45m 18s.xml">
-      <configuration name="MainTest" configurationId="JUnit" />
+    <history-entry file="Run_all_tests_(All_in_user-input-scanner-class) - 2017.01.23 at 14h 56m 43s.xml">
+      <configuration name="Run all tests (All in user-input-scanner-class)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MainTest - 2017.01.23 at 10h 46m 52s.xml">
-      <configuration name="MainTest" configurationId="JUnit" />
+    <history-entry file="Run_all_tests_(All_in_user-input-scanner-class) - 2017.01.23 at 14h 57m 23s.xml">
+      <configuration name="Run all tests (All in user-input-scanner-class)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MainTest - 2017.01.23 at 10h 48m 04s.xml">
-      <configuration name="MainTest" configurationId="JUnit" />
+    <history-entry file="Run_all_tests_(All_in_user-input-scanner-class) - 2017.01.23 at 14h 59m 18s.xml">
+      <configuration name="Run all tests (All in user-input-scanner-class)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MainTest - 2017.01.23 at 10h 48m 11s.xml">
-      <configuration name="MainTest" configurationId="JUnit" />
+    <history-entry file="Run_all_tests_(All_in_user-input-scanner-class) - 2017.01.23 at 15h 03m 51s.xml">
+      <configuration name="Run all tests (All in user-input-scanner-class)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MainTest - 2017.01.23 at 10h 52m 04s.xml">
-      <configuration name="MainTest" configurationId="JUnit" />
+    <history-entry file="Run_all_tests_(All_in_user-input-scanner-class) - 2017.01.23 at 15h 04m 09s.xml">
+      <configuration name="Run all tests (All in user-input-scanner-class)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MenuServiceTest - 2017.01.23 at 10h 41m 12s.xml">
-      <configuration name="MenuServiceTest" configurationId="JUnit" />
+    <history-entry file="Run_all_tests_(All_in_user-input-scanner-class) - 2017.01.23 at 15h 05m 15s.xml">
+      <configuration name="Run all tests (All in user-input-scanner-class)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MenuServiceTest - 2017.01.23 at 10h 41m 51s.xml">
-      <configuration name="MenuServiceTest" configurationId="JUnit" />
+    <history-entry file="Run_all_tests_(All_in_user-input-scanner-class) - 2017.01.23 at 15h 06m 13s.xml">
+      <configuration name="Run all tests (All in user-input-scanner-class)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MenuServiceTest_testPrintAnswer - 2017.01.23 at 10h 40m 11s.xml">
-      <configuration name="MenuServiceTest.testPrintAnswer" configurationId="JUnit" />
+    <history-entry file="Run_all_tests_(All_in_user-input-scanner-class) - 2017.01.23 at 15h 08m 02s.xml">
+      <configuration name="Run all tests (All in user-input-scanner-class)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MenuServiceTest_testPrintAnswer - 2017.01.23 at 10h 41m 05s.xml">
-      <configuration name="MenuServiceTest.testPrintAnswer" configurationId="JUnit" />
+    <history-entry file="Run_all_tests_(All_in_user-input-scanner-class) - 2017.01.23 at 15h 15m 55s.xml">
+      <configuration name="Run all tests (All in user-input-scanner-class)" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12657000" />
+    <option name="totallyTimeSpent" value="23641000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="45" y="23" width="1635" height="1027" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1029,12 +990,12 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956687" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40484047" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39273927" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20464532" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22849968" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893288" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1158,44 +1119,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theironyard/ConversionService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/theironyard/WeightTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="31">
-          <caret line="23" column="3" lean-forward="true" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theironyard/Weight.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="19" lean-forward="false" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/theironyard/ConversionServiceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="30" column="5" lean-forward="true" selection-start-line="17" selection-start-column="35" selection-end-line="30" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="416">
@@ -1220,22 +1143,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theironyard/MenuService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/theironyard/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-278">
-          <caret line="28" column="33" lean-forward="false" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
+        <state relative-caret-position="393">
+          <caret line="131" column="0" lean-forward="true" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/theironyard/ConversionServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="32" column="43" lean-forward="false" selection-start-line="32" selection-start-column="43" selection-end-line="32" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#175#176#0" expanded="true" />
-            <element signature="e#213#214#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/theironyard/WeightTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="44" column="20" lean-forward="true" selection-start-line="44" selection-start-column="20" selection-end-line="44" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/theironyard/Weight.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="696">
+          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/theironyard/MenuServiceTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="54" column="5" lean-forward="true" selection-start-line="33" selection-start-column="4" selection-end-line="54" selection-end-column="5" />
+        <state relative-caret-position="161">
+          <caret line="100" column="9" lean-forward="true" selection-start-line="95" selection-start-column="8" selection-end-line="100" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/theironyard/MenuService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="356" column="6" lean-forward="true" selection-start-line="356" selection-start-column="6" selection-end-line="356" selection-end-column="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/theironyard/ConversionService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="74" column="0" lean-forward="true" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1244,16 +1211,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/theironyard/MainTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="52" column="16" lean-forward="false" selection-start-line="52" selection-start-column="16" selection-end-line="52" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theironyard/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        <state relative-caret-position="374">
+          <caret line="41" column="19" lean-forward="false" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
           <folding />
         </state>
       </provider>

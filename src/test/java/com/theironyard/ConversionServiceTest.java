@@ -1,8 +1,12 @@
 package com.theironyard;
 
+import net.doughughes.testifier.exception.CannotAccessMethodException;
+import net.doughughes.testifier.exception.CannotFindEnumException;
 import net.doughughes.testifier.exception.CannotFindMethodException;
+import net.doughughes.testifier.exception.CannotInvokeMethodException;
 import net.doughughes.testifier.matcher.RegexMatcher;
 import net.doughughes.testifier.test.TestifierTest;
+import net.doughughes.testifier.util.Invoker;
 import org.junit.Test;
 
 import java.util.List;
@@ -23,7 +27,12 @@ public class ConversionServiceTest extends TestifierTest {
         ConversionService service = new ConversionService();
 
         /* act */
-        double result = service.convert(1, Weight.STONE, Weight.POUND);
+        double result = 0;
+        try {
+            result = (double) Invoker.invoke(service, "convert", 1d, Invoker.getEnumValue(Weight.class, "STONE"), Invoker.getEnumValue(Weight.class, "POUND"));
+        } catch (CannotFindEnumException | CannotFindMethodException | CannotAccessMethodException | CannotInvokeMethodException e) {
+            e.printStackTrace();
+        }
 
         /* assert */
         assertThat("1 stone should be 14 pounds",
@@ -36,7 +45,12 @@ public class ConversionServiceTest extends TestifierTest {
         ConversionService service = new ConversionService();
 
         /* act */
-        double result = service.convert(200, Weight.POUND, Weight.KILOGRAM);
+        double result = 0;
+        try {
+            result = (double) Invoker.invoke(service, "convert", 200d, Invoker.getEnumValue(Weight.class, "POUND"), Invoker.getEnumValue(Weight.class, "KILOGRAM"));
+        } catch (CannotFindEnumException | CannotFindMethodException | CannotAccessMethodException | CannotInvokeMethodException e) {
+            fail(e.getMessage());
+        }
 
         /* assert */
         assertThat("200 pounds should be 90.718474 kilograms",
@@ -49,7 +63,12 @@ public class ConversionServiceTest extends TestifierTest {
         ConversionService service = new ConversionService();
 
         /* act */
-        double result = service.convert(2345.67, Weight.GRAM, Weight.TON);
+        double result = 0;
+        try {
+            result = (double) Invoker.invoke(service, "convert", 2345.67d, Invoker.getEnumValue(Weight.class, "GRAM"), Invoker.getEnumValue(Weight.class, "TON"));
+        } catch (CannotFindEnumException | CannotFindMethodException | CannotAccessMethodException | CannotInvokeMethodException e) {
+            fail(e.getMessage());
+        }
 
         /* assert */
         assertThat("2345.67 grams should be 0.0025856586 tons",
@@ -62,7 +81,12 @@ public class ConversionServiceTest extends TestifierTest {
         ConversionService service = new ConversionService();
 
         /* act */
-        List<String> result = service.listUnits();
+        List<String> result = null;
+        try {
+            result = (List<String>) Invoker.invoke(service, "listUnits");
+        } catch (CannotFindMethodException | CannotAccessMethodException | CannotInvokeMethodException e) {
+            e.printStackTrace();
+        }
 
         /* assert */
         assertThat("Weight units should include all of the following: mile, yard, foot, inch, kilometer, meter, centimeter, and millimeter",

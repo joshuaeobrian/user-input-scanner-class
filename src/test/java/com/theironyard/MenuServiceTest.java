@@ -1,6 +1,8 @@
 package com.theironyard;
 
+import net.doughughes.testifier.exception.*;
 import net.doughughes.testifier.test.TestifierTest;
+import net.doughughes.testifier.util.Invoker;
 import org.junit.Test;
 
 import java.io.ByteArrayInputStream;
@@ -11,6 +13,7 @@ import java.util.Scanner;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.number.IsCloseTo.closeTo;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.fail;
 
 public class MenuServiceTest extends TestifierTest {
 
@@ -19,10 +22,20 @@ public class MenuServiceTest extends TestifierTest {
         /* arrange */
         ByteArrayInputStream is = new ByteArrayInputStream("123.456\n".getBytes());
         Scanner scanner = new Scanner(is);
-        MenuService menuService = new MenuService(scanner);
+        MenuService menuService = null;
+        try {
+            menuService = (MenuService) Invoker.instantiate(MenuService.class, scanner);
+        } catch (CannotFindConstructorException | CannotInstantiateClassException | CannotAccessMethodException e) {
+            fail(e.getMessage());
+        }
 
         /* act */
-        double weight = menuService.promptForWeight();
+        double weight = 0;
+        try {
+            weight = (double) Invoker.invoke(menuService, "promptForWeight");
+        } catch (CannotFindMethodException | CannotAccessMethodException | CannotInvokeMethodException e) {
+            fail(e.getMessage());
+        }
         List<String> lines = outputWatcher.getLines();
 
         /* assert */
@@ -37,10 +50,20 @@ public class MenuServiceTest extends TestifierTest {
         ByteArrayInputStream is = new ByteArrayInputStream("123 test\n321\n".getBytes());
         Scanner scanner = new Scanner(is);
         scanner.useDelimiter("\n");
-        MenuService menuService = new MenuService(scanner);
+        MenuService menuService = null;
+        try {
+            menuService = (MenuService) Invoker.instantiate(MenuService.class, scanner);
+        } catch (CannotFindConstructorException | CannotInstantiateClassException | CannotAccessMethodException e) {
+            fail(e.getMessage());
+        }
 
         /* act */
-        double weight = menuService.promptForWeight();
+        double weight = 0;
+        try {
+            weight = (double) Invoker.invoke(menuService, "promptForWeight");
+        } catch (CannotFindMethodException | CannotAccessMethodException | CannotInvokeMethodException e) {
+            e.printStackTrace();
+        }
         List<String> lines = outputWatcher.getLines();
 
         /* assert */
@@ -60,20 +83,37 @@ public class MenuServiceTest extends TestifierTest {
         ByteArrayInputStream is = new ByteArrayInputStream("pound\n".getBytes());
         Scanner scanner = new Scanner(is);
         scanner.useDelimiter("\n");
-        MenuService menuService = new MenuService(scanner);
+        MenuService menuService = null;
+        try {
+            menuService = (MenuService) Invoker.instantiate(MenuService.class, scanner);
+        } catch (CannotFindConstructorException | CannotInstantiateClassException | CannotAccessMethodException e) {
+            fail(e.getMessage());
+        }
         ArrayList<String> units = new ArrayList<>();
         units.add("gram");
         units.add("pound");
 
+        Weight enumValue = null;
+        try {
+            enumValue = (Weight) Invoker.getEnumValue(Weight.class, "POUND");
+        } catch (CannotFindEnumException e) {
+            fail(e.getMessage());
+        }
+
         /* act */
-        Weight unit = menuService.promptForFromUnit(units);
+        Weight unit = null;
+        try {
+            unit = (Weight) Invoker.invoke(menuService, "promptForFromUnit", units);
+        } catch (CannotFindMethodException | CannotAccessMethodException | CannotInvokeMethodException e) {
+            fail(e.getMessage());
+        }
         List<String> lines = outputWatcher.getLines();
 
         /* assert */
         assertThat("promptForFromUnit should have prompted for a unit using the provided list of units",
                 lines.get(0).trim(), equalTo("Select the unit to convert from " + units + ":"));
         assertThat("unit returned should be pound",
-                unit.toString(), equalTo(Weight.POUND.toString()));
+                unit.toString(), equalTo(enumValue.toString()));
     }
 
     @Test
@@ -82,13 +122,30 @@ public class MenuServiceTest extends TestifierTest {
         ByteArrayInputStream is = new ByteArrayInputStream("fred\ngram\n".getBytes());
         Scanner scanner = new Scanner(is);
         scanner.useDelimiter("\n");
-        MenuService menuService = new MenuService(scanner);
+        MenuService menuService = null;
+        try {
+            menuService = (MenuService) Invoker.instantiate(MenuService.class, scanner);
+        } catch (CannotFindConstructorException | CannotInstantiateClassException | CannotAccessMethodException e) {
+            fail(e.getMessage());
+        }
         ArrayList<String> units = new ArrayList<>();
         units.add("gram");
         units.add("pound");
 
+        Weight enumValue = null;
+        try {
+            enumValue = (Weight) Invoker.getEnumValue(Weight.class, "GRAM");
+        } catch (CannotFindEnumException e) {
+            fail(e.getMessage());
+        }
+
         /* act */
-        Weight unit = menuService.promptForFromUnit(units);
+        Weight unit = null;
+        try {
+            unit = (Weight) Invoker.invoke(menuService, "promptForFromUnit", units);
+        } catch (CannotFindMethodException | CannotAccessMethodException | CannotInvokeMethodException e) {
+            fail(e.getMessage());
+        }
         List<String> lines = outputWatcher.getLines();
 
         /* assert */
@@ -99,7 +156,7 @@ public class MenuServiceTest extends TestifierTest {
         assertThat("promptForFromUnit should have re-prompted for a unit after bad input",
                 lines.get(2).trim(), equalTo("Select the unit to convert from " + units + ":"));
         assertThat("unit returned should be gram",
-                unit.toString(), equalTo(Weight.GRAM.toString()));
+                unit.toString(), equalTo(enumValue.toString()));
     }
 
     @Test
@@ -108,20 +165,37 @@ public class MenuServiceTest extends TestifierTest {
         ByteArrayInputStream is = new ByteArrayInputStream("pound\n".getBytes());
         Scanner scanner = new Scanner(is);
         scanner.useDelimiter("\n");
-        MenuService menuService = new MenuService(scanner);
+        MenuService menuService = null;
+        try {
+            menuService = (MenuService) Invoker.instantiate(MenuService.class, scanner);
+        } catch (CannotFindConstructorException | CannotInstantiateClassException | CannotAccessMethodException e) {
+            fail(e.getMessage());
+        }
         ArrayList<String> units = new ArrayList<>();
         units.add("gram");
         units.add("pound");
 
+        Weight enumValue = null;
+        try {
+            enumValue = (Weight) Invoker.getEnumValue(Weight.class, "POUND");
+        } catch (CannotFindEnumException e) {
+            fail(e.getMessage());
+        }
+
         /* act */
-        Weight unit = menuService.promptForToUnit(units);
+        Weight unit = null;
+        try {
+            unit = (Weight) Invoker.invoke(menuService, "promptForToUnit", units);
+        } catch (CannotFindMethodException | CannotAccessMethodException | CannotInvokeMethodException e) {
+            fail(e.getMessage());
+        }
         List<String> lines = outputWatcher.getLines();
 
         /* assert */
         assertThat("promptForToUnit should have prompted for a unit using the provided list of units",
                 lines.get(0).trim(), equalTo("Select the unit to convert to " + units + ":"));
         assertThat("unit returned should be pound",
-                unit.toString(), equalTo(Weight.POUND.toString()));
+                unit.toString(), equalTo(enumValue.toString()));
     }
 
     @Test
@@ -130,13 +204,30 @@ public class MenuServiceTest extends TestifierTest {
         ByteArrayInputStream is = new ByteArrayInputStream("fred\ngram\n".getBytes());
         Scanner scanner = new Scanner(is);
         scanner.useDelimiter("\n");
-        MenuService menuService = new MenuService(scanner);
+        MenuService menuService = null;
+        try {
+            menuService = (MenuService) Invoker.instantiate(MenuService.class, scanner);
+        } catch (CannotFindConstructorException | CannotInstantiateClassException | CannotAccessMethodException e) {
+            fail(e.getMessage());
+        }
         ArrayList<String> units = new ArrayList<>();
         units.add("gram");
         units.add("pound");
 
+        Weight enumValue = null;
+        try {
+            enumValue = (Weight) Invoker.getEnumValue(Weight.class, "GRAM");
+        } catch (CannotFindEnumException e) {
+            fail(e.getMessage());
+        }
+
         /* act */
-        Weight unit = menuService.promptForToUnit(units);
+        Weight unit = null;
+        try {
+            unit = (Weight) Invoker.invoke(menuService, "promptForToUnit", units);
+        } catch (CannotFindMethodException | CannotAccessMethodException | CannotInvokeMethodException e) {
+            fail(e.getMessage());
+        }
         List<String> lines = outputWatcher.getLines();
 
         /* assert */
@@ -147,7 +238,7 @@ public class MenuServiceTest extends TestifierTest {
         assertThat("promptForToUnit should have re-prompted for a unit after bad input",
                 lines.get(2).trim(), equalTo("Select the unit to convert to " + units + ":"));
         assertThat("unit returned should be gram",
-                unit.toString(), equalTo(Weight.GRAM.toString()));
+                unit.toString(), equalTo(enumValue.toString()));
     }
 
     @Test
@@ -155,10 +246,28 @@ public class MenuServiceTest extends TestifierTest {
         /* arrange */
         Scanner scanner = new Scanner(System.in);
         scanner.useDelimiter("\n");
-        MenuService menuService = new MenuService(scanner);
+        MenuService menuService = null;
+        try {
+            menuService = (MenuService) Invoker.instantiate(MenuService.class, scanner);
+        } catch (CannotFindConstructorException | CannotInstantiateClassException | CannotAccessMethodException e) {
+            fail(e.getMessage());
+        }
+
+        Weight enumGramValue = null;
+        Weight enumPoundValue = null;
+        try {
+            enumGramValue = (Weight) Invoker.getEnumValue(Weight.class, "GRAM");
+            enumPoundValue = (Weight) Invoker.getEnumValue(Weight.class, "POUND");
+        } catch (CannotFindEnumException e) {
+            fail(e.getMessage());
+        }
 
         /* act */
-        menuService.printAnswer(123, Weight.GRAM, 0.27116858, Weight.POUND);
+        try {
+            Invoker.invoke(menuService, "printAnswer", 123d, enumGramValue, 0.27116858, enumPoundValue);
+        } catch (CannotFindMethodException | CannotAccessMethodException | CannotInvokeMethodException e) {
+            fail(e.getMessage());
+        }
         List<String> lines = outputWatcher.getLines();
 
         /* assert */

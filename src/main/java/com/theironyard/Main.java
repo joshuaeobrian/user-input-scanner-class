@@ -3,32 +3,133 @@ package com.theironyard;
 import java.util.Scanner;
 
 /**
- * Hello world!
+ * As we move into writing more complex software we begin to compose our build
+ * applications using many classes. Each class is dedicated to some purpose. The
+ * different classes depend on each other to complete their jobs.
+ *
+ * This project's purpose is to create a full-fledged command line application
+ * that follows good coding practices. In particular, separation of concerns.
+ * This means that each of the classes in this project are dedicated to a
+ * specific purpose. The different classes may depend on other classes to
+ * complete their jobs.
+ *
+ * In this exercise we have the following classes:
+ *
+ * Main - The Main class is the entry point to our application. It's job is to
+ *  setup all of the other classes and orchestrate their interactions.
+ *
+ * ConversionService - In programming, a service is an object that specializes
+ *  in a related set of tasks. In this case, the ConversionService specializes
+ *  in converting values from one unit to another.
+ *
+ * MenuService - In the MenuService specializes in text-based input and output.
+ *  For example, we can use the MenuService to promt a user for a weight and
+ *  collect the value they type in.
+ *
+ * Weight - The Weight enum contains constants for the different weights we can
+ *  convert between.
+ *
+ * Your job is to follow the instructions in the classes above to build out this
+ * application. You will want implement classes in this order:
+ *
+ * 1) Weight
+ * 2) Conversion
+ * 3) Menu
+ * 4) Main
+ *
+ * Open each of these classes and follow the directions therein.
  */
+
 public class Main {
 
     public static void main(String[] args) {
-        // setup objects
-        Scanner scanner = new Scanner(System.in);
-        scanner.useDelimiter("\n");
+        /*
+            It is assumed that you have already implemented the MenuService and
+            ConversionService classes. Now follow the instructions below to
+            complete this main() method.
+         */
 
-        ConversionService converter = new ConversionService();
-        MenuService menu = new MenuService(scanner);
+        /*
+            Setup objects
 
-        // prompt for a weight to convert
-        double number = menu.promptForWeight();
+            Let's start by setting up the objects we need for our application to
+            work. These are Scanner, ConversionService, and MenuService. Store
+            each of these in variables with logical names. EG: `menuService` or
+            `converter`.
+         */
 
-        // prompt for the from unit
-        Weight from = menu.promptForFromUnit(converter.listUnits());
+        // todo: Create a new instance of the Scanner class. It should read from System.in.
 
-        // prompt for the to unit
-        Weight to = menu.promptForToUnit(converter.listUnits());
 
-        // convert the weight
-        double converted = converter.convert(number, from, to);
+        // todo: Configure the Scanner instance to use a newline (\n) character as its delimiter
 
-        // print the answer
-        menu.printAnswer(number, from, converted, to);
+
+        // todo: Create a new instance of the ConversionService
+
+
+
+        // todo: Create a new instance of the MenuService. Pass the Scanner instance you created earlier into the MenuService's constructor
+
+
+
+        /*
+            Now that we have our objects configured, we can start to use them.
+            By following the instructions below you will write code that prompts
+            the user for a weight, then a unit to convert from, then a unit to
+            convert to. Finally it will print out the converted results.
+
+            Each of the promptXyz() methods below return a value. You'll want to
+            store those in variables that you can then pass to the
+            printAnswers() method.
+         */
+
+        /*
+            Invoke the promptForWeight() method of the MenuService to prompt for
+            a weight to convert. This method doesn't accept any arguments, but
+            returns a double number that we will be converting.
+         */
+        // todo: Invoke the MenuService's promptForWeight() method.
+
+
+
+        /*
+            Invoke the promptForFromUnit method. This will require you to
+            provide a list of valid units to prompt for. This value is provided
+            by the ConversionService's listUnits() method. The reason we pass in
+            these values is because our MenuService doesn't need to know how to
+            get this list. It only needs to know what to print. By having the
+            ConversionService specialize in this, our MenuService becomes
+            simpler.
+         */
+        // todo: Invoke the MenuService's promptForFromUnit() method.
+
+
+
+        // todo: Invoke the MenuService's promptForToUnit() method.
+
+
+
+        /*
+            Now that we know the weight being converted, the unit we're
+            converting from and the unit we're converting to, we can actually
+            convert the number. We used the MenuService to collect the
+            information, but it's the ConversionService's job to actually
+            perform the conversion. This is done by invoking the
+            ConversionService's convert() method.
+         */
+        // todo: Invoke the ConversionService's convert() method.
+
+
+
+        /*
+            At long last we know the weight being converted, the to and from
+            units, and the converted value. By passing each of these to the
+            MenuService's printAnswer() we can print out the conversion results
+            and end the program.
+         */
+        //todo: Print the answer using the MenuService's printAnswer() method
+
+
 
     }
 
