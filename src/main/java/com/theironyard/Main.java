@@ -1,7 +1,7 @@
 package com.theironyard;
 
 /**
- * As we move into writing more complex software we begin to compose our build
+ * As we move into writing more complex software we begin to compose our
  * applications using many classes. Each class is dedicated to some purpose. The
  * different classes depend on each other to complete their jobs.
  *
