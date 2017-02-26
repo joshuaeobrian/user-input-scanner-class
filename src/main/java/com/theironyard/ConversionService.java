@@ -50,7 +50,7 @@ public class ConversionService {
      *
      * weight = 210.5
      * from = Weight.POUND
-     * to = WEIGHT.STONE
+     * to = Weight.STONE
      *
      * The converted weight is 15.035714, so that is what would be returned.
      *

@@ -34,7 +34,7 @@ public class MenuService {
      * Also, by passing in the Scanner when the MenuService is instantiated, we
      * have the option to pass in other types of Scanners that are configured in
      * different ways. For example, all of the tests written for the MenuService
-     * have Scanner configured with a different InputStream that stdin. That
+     * have Scanner configured with a different InputStream than stdin. That
      * allows our tests to automate input and confirm that the results are what
      * we expect.
      *
@@ -73,7 +73,7 @@ public class MenuService {
 
             Also note, there is nothing special about println() here. We're only
             calling it a prompt because it's telling the user what to do.
-            Without it the user wouldn't know to enter a weight.
+            Without it, the user wouldn't know to enter a weight.
          */
         // todo: prompt the user with "Enter a weight: "
 

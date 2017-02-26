@@ -4,7 +4,7 @@ package com.theironyard;
  * The Weight enum contains constants related to weights. Each constant is has
  * a value in grams. We can use the grams as a base unit to convert between. For
  * example, if we know that there are 1,000 grams in a kilogram and 1,000,000 in
- * a metric ton. Then we can determine that 1 kilogram must be 0.001 metric
+ * a metric ton, then we can determine that 1 kilogram must be 0.001 metric
  * tons.
  *
  * Follow the instructions below to build the Weight enum.

@@ -1,7 +1,7 @@
 package com.theironyard;
 
 /**
- * As we move into writing more complex software we begin to compose our
+ * As we move into writing more complex software we will begin to compose our
  * applications using many classes. Each class is dedicated to some purpose. The
  * different classes depend on each other to complete their jobs.
  *
@@ -13,15 +13,15 @@ package com.theironyard;
  *
  * In this exercise we have the following classes:
  *
- * Main - The Main class is the entry point to our application. It's job is to
+ * Main - The Main class is the entry point to our application. Its job is to
  *  setup all of the other classes and orchestrate their interactions.
  *
  * ConversionService - In programming, a service is an object that specializes
  *  in a related set of tasks. In this case, the ConversionService specializes
  *  in converting values from one unit to another.
  *
- * MenuService - In the MenuService specializes in text-based input and output.
- *  For example, we can use the MenuService to promt a user for a weight and
+ * MenuService - The MenuService specializes in text-based input and output.
+ *  For example, we can use the MenuService to prompt a user for a weight and
  *  collect the value they type in.
  *
  * Weight - The Weight enum contains constants for the different weights we can
