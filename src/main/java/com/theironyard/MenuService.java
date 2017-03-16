@@ -218,7 +218,6 @@ public class MenuService {
 
 			//return response;
 		}
-
     /**
      * Create a method called promptForFromUnit(). This method accepts an
      * ArrayList of String units and returns a valid Weight enum value that the
@@ -258,11 +257,23 @@ public class MenuService {
 
         //endregion
 		// todo: prompt the user for the unit to convert from
-
-		while(true) {
-			//printing from return of private function that makes the output in proper format
-			System.out.println(printString("Select the unit to convert from [",units));
-
+		Weight weight = promptSelection("from",units);
+		return weight;
+//		String input = "";
+//		while(true){
+//			//printing from return of private method that makes the output in proper format
+//			System.out.println(printString("Select the unit to convert from [",units));
+//			input = scanner.nextLine();
+//
+//			if(units.contains(input)) {
+//				//calls private method that return Weight
+//				return checkArrayForMatch(input, units);
+//			}else{
+//				System.out.println("Please choose a valid unit to convert from.");
+//			}
+//
+//		}
+	}
 //region
         /*
             We can safely assume that any value the user provides will be a
@@ -277,8 +288,6 @@ public class MenuService {
          */
 			//endregion
 			// todo: read the next line of input using the next() method and save it in a variable
-			String input = scanner.next();
-
 //region :notes
         /*
             Now we need to validate the input the user provided is valid.
@@ -302,37 +311,10 @@ public class MenuService {
          */
 			//endregion
 			// todo: write if statement that checks if the user's input is not a valid unit
-			if(units.contains(input)) {
-				//calls private method that return Weight
-				return checkArrayForMatch(input, units);
-			}
-			System.out.println("Please choose a valid unit to convert from.");
-		}
-	}
-	// prints out formatted selection statement saves on repetition
-	private String printString(String startingString,ArrayList<String>units){
+///region
 
-		for(int index = 0; index < units.size(); index++){
-			if((units.size()-1) ==index){
-				startingString+= units.get(index)+"]: ";
-			}else{
-				startingString+= units.get(index)+", ";
-			}
-		}
-		return startingString;
-	}
-	//private method that return Weight saves on repetition
-	private Weight checkArrayForMatch(String input,ArrayList<String> units){
-		for (int i = 0; i < units.size(); i++) {
-			if (input.equals(units.get(i))) {
-				if (units.get(i).contains("_")) {
-					input = units.get(i).replace(" ", "_");
-				}
-				input = input.toUpperCase();
-			}
-		}
-		return Weight.valueOf(input);
-	}
+	// prints out formatted selection statement saves on repetition
+
 
 
             /*
@@ -391,19 +373,22 @@ public class MenuService {
      * @param units A List of String values that are valid units
      * @return A Weight enum value corresponding to the user's selected unit
      */
+//endregion
     // todo: implement promptForToUnit() method
 	public Weight promptForToUnit(ArrayList<String> units){
-		while(true){
-			//printing from return of private method that makes the output in proper format
-			System.out.println(printString("Select the unit to convert to [",units));
-			String input = scanner.nextLine();
-
-			if(units.contains(input)) {
-				//calls private method that return Weight
-				return checkArrayForMatch(input, units);
-			}
-				System.out.println("Please choose a valid unit to convert to.");
-		}
+		Weight weight = promptSelection("to",units);
+		return weight;
+//		while(true){
+//			//printing from return of private method that makes the output in proper format
+//			System.out.println(printString("Select the unit to convert to [",units));
+//			String input = scanner.nextLine();
+//
+//			if(units.contains(input)) {
+//				//calls private method that return Weight
+//				return checkArrayForMatch(input, units);
+//			}
+//				System.out.println("Please choose a valid unit to convert to.");
+//		}
 	}
 
 
@@ -436,6 +421,44 @@ public class MenuService {
 	public void printAnswer(double number,Weight from, double converted, Weight to ){
 
 		System.out.printf("%s %ss is %s %ss",number,from.toString().toLowerCase(),converted,to.toString().toLowerCase());
+	}
+
+	private Weight promptSelection(String toOrFrom, ArrayList<String> units){
+		String input;
+		while(true){
+			//printing from return of private method that makes the output in proper format
+			System.out.println(printString("Select the unit to convert "+toOrFrom+" [",units));
+			input = scanner.next();
+			if(units.contains(input)) {
+				//calls private method that return Weight
+				return checkArrayForMatch(input, units);
+			}
+			System.out.println("Please choose a valid unit to convert "+toOrFrom+".");
+		}
+	}
+//printing from return of private function that makes the output in proper format
+	private String printString(String startingString,ArrayList<String>units){
+
+		for(int index = 0; index < units.size(); index++){
+			if((units.size()-1) ==index){
+				startingString+= units.get(index)+"]: ";
+			}else{
+				startingString+= units.get(index)+", ";
+			}
+		}
+		return startingString;
+	}
+	//private method that return Weight saves on repetition
+	private Weight checkArrayForMatch(String input,ArrayList<String> units){
+		for (int i = 0; i < units.size(); i++) {
+			if (input.equals(units.get(i))) {
+				if (units.get(i).contains("_")) {
+					input = units.get(i).replace(" ", "_");
+				}
+				input = input.toUpperCase();
+			}
+		}
+		return Weight.valueOf(input);
 	}
 
 

@@ -63,7 +63,7 @@ public class Main {
 
 
         // todo: Configure the Scanner instance to use a newline (\n) character as its delimiter
-        scanner.useDelimiter("\n");
+        scanner.useDelimiter("[\n]");
 
 
         // todo: Create a new instance of the ConversionService
