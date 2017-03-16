@@ -22,8 +22,7 @@ public class MenuService {
      */
     // todo: create private Scanner property
 	private Scanner scanner;
-
-
+//region:Instructions
     /**
      * Create a constructor that receives an instance of Scanner and sets it
      * into the private Scanner property created above.
@@ -44,13 +43,12 @@ public class MenuService {
      *
      * @param scanner An instance of Scanner.
      */
+    //endregion
     // todo: create MenuService constructor
-
 	public MenuService(Scanner scanner) {
 		this.scanner = scanner;
 	}
-
-
+//region:Instructions
 	/**
      * Create a method named promptForWeight(). It should accept no arguments
      * and return a double value. The double value is, of course, the value the
@@ -64,11 +62,11 @@ public class MenuService {
      *
      * @return a double value which is a weight.
      */
+	//endregion
     // todo: create a method named promptForWidget() that returns a double
 		public double promptForWeight() {
 			double response;
-
-//region
+//region:Notes
         /*
             We need to prompt the user to input a weight. We can do this by
             writing out to the console using System.out.println(). As a side
@@ -88,8 +86,7 @@ public class MenuService {
 			while(true) {
 				// todo: prompt the user with "Enter a weight: "
 				System.out.println("Enter a weight: ");
-
-//region
+//region:Notes
         /*
             Now we need to see if the user inputs a numeric value. We can check
             this by calling the Scanner class' hasNextDouble() method. This
@@ -109,8 +106,7 @@ public class MenuService {
 				//endregion
 				// todo: write if statement that checks if the user input a double
 				if (scanner.hasNextDouble()) {
-
-//region
+//region:Notes
 
             /*
                 If hasNextDouble() has returned true then the user has entered a
@@ -125,7 +121,7 @@ public class MenuService {
 				}
 				// todo: write else statement
 				else {
-//region
+//region:Notes
             /*
                 If hasNextDouble() has returned false then the user entered
                 something that was not a double value. It's important to note
@@ -215,9 +211,8 @@ public class MenuService {
 
 				}
 			}
-
-			//return response;
 		}
+//region:Instructions
     /**
      * Create a method called promptForFromUnit(). This method accepts an
      * ArrayList of String units and returns a valid Weight enum value that the
@@ -233,6 +228,7 @@ public class MenuService {
      * @param units An ArrayList of String values that are valid units
      * @return A Weight enum value corresponding to the user's selected unit
      */
+    //endregion
     // todo: implement promptForFromUnit() method
 	public Weight promptForFromUnit(ArrayList<String> units) {//region
 		   /*
@@ -259,20 +255,6 @@ public class MenuService {
 		// todo: prompt the user for the unit to convert from
 		Weight weight = promptSelection("from",units);
 		return weight;
-//		String input = "";
-//		while(true){
-//			//printing from return of private method that makes the output in proper format
-//			System.out.println(printString("Select the unit to convert from [",units));
-//			input = scanner.nextLine();
-//
-//			if(units.contains(input)) {
-//				//calls private method that return Weight
-//				return checkArrayForMatch(input, units);
-//			}else{
-//				System.out.println("Please choose a valid unit to convert from.");
-//			}
-//
-//		}
 	}
 //region
         /*
@@ -378,20 +360,9 @@ public class MenuService {
 	public Weight promptForToUnit(ArrayList<String> units){
 		Weight weight = promptSelection("to",units);
 		return weight;
-//		while(true){
-//			//printing from return of private method that makes the output in proper format
-//			System.out.println(printString("Select the unit to convert to [",units));
-//			String input = scanner.nextLine();
-//
-//			if(units.contains(input)) {
-//				//calls private method that return Weight
-//				return checkArrayForMatch(input, units);
-//			}
-//				System.out.println("Please choose a valid unit to convert to.");
-//		}
 	}
 
-
+//region:Instructions
     /**
      * Create a method named printAnswer(). It should accept arguments for the
      * weight to convert, the unit being converted from, the unit being
@@ -417,18 +388,22 @@ public class MenuService {
      * @param converted The converted value
      * @param to The unit of the converted value
      */
+    //endregion
     // todo: implement printAnswer() method
 	public void printAnswer(double number,Weight from, double converted, Weight to ){
 
 		System.out.printf("%s %ss is %s %ss",number,from.toString().toLowerCase(),converted,to.toString().toLowerCase());
 	}
 
+	//handles while look and Statement
 	private Weight promptSelection(String toOrFrom, ArrayList<String> units){
 		String input;
 		while(true){
 			//printing from return of private method that makes the output in proper format
 			System.out.println(printString("Select the unit to convert "+toOrFrom+" [",units));
+
 			input = scanner.next();
+
 			if(units.contains(input)) {
 				//calls private method that return Weight
 				return checkArrayForMatch(input, units);
@@ -436,6 +411,7 @@ public class MenuService {
 			System.out.println("Please choose a valid unit to convert "+toOrFrom+".");
 		}
 	}
+
 //printing from return of private function that makes the output in proper format
 	private String printString(String startingString,ArrayList<String>units){
 
@@ -448,6 +424,8 @@ public class MenuService {
 		}
 		return startingString;
 	}
+
+
 	//private method that return Weight saves on repetition
 	private Weight checkArrayForMatch(String input,ArrayList<String> units){
 		for (int i = 0; i < units.size(); i++) {
