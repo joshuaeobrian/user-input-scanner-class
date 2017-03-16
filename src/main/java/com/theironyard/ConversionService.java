@@ -1,5 +1,7 @@
 package com.theironyard;
 
+import java.util.ArrayList;
+
 /**
  * The ConversionService is responsible for converting values between units. It
  * also can provide a list of units it can convert between (in String form).
@@ -37,6 +39,18 @@ public class ConversionService {
      * @return A ArrayList of lowercase Strings containing valid units. All underscores are replaced with spaces.
      */
     // todo: create listUnits() method
+	public ArrayList<String> listUnits(){
+		ArrayList<String> unitList = new ArrayList<>();
+		for(Weight weight: Weight.values()){
+			if(weight.toString().toLowerCase().contains("_")) {
+				unitList.add(weight.toString().toLowerCase().replace("_"," "));
+			}else {
+				unitList.add(weight.toString().toLowerCase());
+			}
+		}
+
+		return unitList;
+	}
 
 
 
@@ -69,6 +83,10 @@ public class ConversionService {
      * @return the converted weight
      */
     // todo: create convert() method
+	public double convert(double weight,Weight from, Weight to){
+
+		return weight * from.getGrams() / to.getGrams();
+	}
 
 
 
